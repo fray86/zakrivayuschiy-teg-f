@@ -68,7 +68,7 @@
               Место для ваших воспоминаний о начале обучения.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="html-1">
+              <button class="card__icon-button" type="button" aria-labelledby="html-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -117,7 +117,7 @@
             <img
               src="./images/car.webp"
               alt="1 спринт: Я — чистый лист"
-              class="card__image grayscale"
+              class="card__image filter-grayscale"
               loading="lazy"
             />
           </div>
@@ -133,7 +133,7 @@
               Место для ваших воспоминаний о начале первого спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="html-2">
+              <button class="card__icon-button" type="button" aria-labelledby="html-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -182,7 +182,7 @@
             <img
               src="./images/car.webp"
               alt="1 спринт: А если не получится?"
-              class="card__image saturate"
+              class="card__image filter-saturate"
               loading="lazy"
             />
           </div>
@@ -196,7 +196,7 @@
               Место для ваших воспоминаний об окончании первого спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="css">
+              <button class="card__icon-button" type="button" aria-labelledby="css">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -241,7 +241,7 @@
             <img
               src="./images/car.webp"
               alt="2 спринт: Погоня за идеалом"
-              class="card__image hue-rotate"
+              class="card__image filter-hue-rotate"
               loading="lazy"
             />
           </div>
@@ -257,7 +257,7 @@
               Место для ваших воспоминаний о начале второго спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="desigions">
+              <button class="card__icon-button" type="button" aria-labelledby="desigions">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -306,7 +306,7 @@
             <img
               src="./images/car.webp"
               alt="2 спринт: О тех, кто рядом"
-              class="card__image invert"
+              class="card__image filter-invert"
               loading="lazy"
             />
           </div>
@@ -323,7 +323,7 @@
               Место для ваших воспоминаний об окончании второго спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="care">
+              <button class="card__icon-button" type="button" aria-labelledby="care">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -368,7 +368,7 @@
             <img
               src="./images/car.webp"
               alt="3 спринт: Обходные стратегии"
-              class="card__image sepia"
+              class="card__image filter-sepia"
               loading="lazy"
             />
           </div>
@@ -382,7 +382,7 @@
               Место для ваших воспоминаний о начале третьего спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="support">
+              <button class="card__icon-button" type="button" aria-labelledby="support">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -431,7 +431,7 @@
             <img
               src="./images/car.webp"
               alt="3 спринт: Когда опускаются руки"
-              class="card__image blur"
+              class="card__image filter-blur"
               loading="lazy"
             />
           </div>
@@ -447,7 +447,7 @@
               Место для ваших воспоминаний об окончании третьего спринта.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="lifes-style">
+              <button class="card__icon-button" type="button" aria-labelledby="lifes-style">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -496,7 +496,7 @@
             <img
               src="./images/car.webp"
               alt="«Сейчас я здесь»"
-              class="card__image multi-filter"
+              class="card__image filter-multi"
               loading="lazy"
             />
           </div>
@@ -514,7 +514,7 @@
               в этой точке пути.
             </p>
             <div class="card__like-button-container">
-              <button class="card__icon-button" aria-labelledby="experience">
+              <button class="card__icon-button" type="button" aria-labelledby="experience">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="like-icon"
@@ -562,6 +562,7 @@
         class="button save-button"
         onclick="window['dialog-id'].showModal()"
         aria-controls="dialog-id"
+        type="button"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -588,7 +589,7 @@
           </svg>
           <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
         </div>
-        <form>
+        <form method="dialog">
           <button
             class="button ok-button"
             onclick="window['dialog-id'].close()"

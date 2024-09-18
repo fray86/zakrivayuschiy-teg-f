@@ -7,56 +7,39 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--text-color);
-  background: repeating-linear-gradient(
-      90deg,
-      var(--background-color),
-      var(--background-color) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      var(--background-color-start),
-      var(--background-color-end) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      var(--background-color-start) 0.01%,
-      var(--background-color-end)
-    );
   background-attachment: fixed;
   background-size: cover;
+  padding-bottom: 105px;
+  background-image: var(--background-image);
 }
 
 /* Photo filters */
 
-.grayscale {
+.filter-grayscale {
   filter: grayscale(50%);
 }
 
-.hue-rotate {
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.saturate {
+.filter-saturate {
   filter: saturate(360%);
 }
 
-.invert {
+.filter-invert {
   filter: invert(80%);
 }
 
-.sepia {
+.filter-sepia {
   filter: sepia(80%);
 }
 
-.blur {
-  filter: blur(20px);
+.filter-blur {
+  filter: blur(12px);
 }
 
-.multi-filter {
+.filter-multi {
   filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
 }
 
@@ -81,7 +64,6 @@
   .image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--label-stroke-color);
-    text-stroke: 1px var(--label-stroke-color);
   }
 }
 
@@ -113,58 +95,6 @@
   fill: var(--text-color);
   position: relative;
   z-index: 1;
-}
-
-.like-icon .heart {
-  transition: fill 0.1s;
-  transform-origin: center center;
-}
-
-.like-icon .contour {
-  fill: var(--text-color);
-}
-
-.like-icon .main-body {
-  fill: var(--page-background);
-  transition: fill 0.3s linear;
-}
-
-.like-icon .core {
-  fill: var(--page-background);
-  transition: fill 0.3s 0.05s;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-  fill: var(--heart-color);
-}
-
-.like-icon:hover .main-body {
-  fill: var(--text-color);
-}
-
-.like-icon:hover .core {
-  fill: var(--text-color);
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-color);
-}
-
-.like-icon:active .core {
-  fill: var(--heart-color);
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-color);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-color);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-color);
 }
 
 /* Buttons */
@@ -328,12 +258,8 @@
   opacity: 0.6;
 }
 
-.theme-menu__button:focus {
-  outline: none;
-  opacity: 0.6;
-}
-
 .theme-menu__button:focus-visible {
+  outline: none;
   opacity: 0.6;
 }
 
@@ -388,18 +314,23 @@
 .card__icon-button {
   padding: 0;
   width: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 36px;
   background: transparent;
-  border: none;
+  border: 2px solid transparent;
   cursor: pointer;
 }
 
 .card__icon-button:focus {
   outline: none;
+
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--stroke-color);
+  border: 2px solid var(--stroke-color);
+  transition: border-color 0.3s ease;
 }
 
 .card__like-button {
@@ -414,21 +345,22 @@
   gap: 6px;
 }
 
-@media (width <= 375px) {
-  .card:nth-child(7) .card__text {
+  @media (width <= 375px) {
+  .card .card__text {
     max-width: 317px;
-  }
-}
+  } 
+} 
 
 /* Modal */
 
 .dialog {
   font-family: var(--fantasy-font-family);
   font-size: 14px;
-  padding: 30px 26px;
+  padding: 30px;
   color: var(--text-color);
   background: var(--page-background);
   border: 2px solid var(--stroke-color);
+  max-inline-size: 357px;
 }
 
 .dialog::backdrop {
@@ -451,7 +383,14 @@
   .dialog__container {
     gap: 28px;
   }
+
+  .dialog {
+    padding: 30px 40px;
+    max-inline-size: 341px;
+  }
 }
+
+
 
 .dialog__text {
   text-transform: uppercase;
